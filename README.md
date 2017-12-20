@@ -10,6 +10,8 @@ Please follow the following instructions to install the app
 
 `git clone https://github.ccs.neu.edu/cs5500/team-21.git`
 
+** Change current directory to `source_code`
+
 ---
 2. Install dependencies
 
