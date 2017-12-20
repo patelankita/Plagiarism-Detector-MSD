@@ -1,0 +1,38 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;
+  " ng-controller="HomeController as model">
+
+    <div class="container">
+        <br>
+        <p ng-show="model.log" class="alert alert-danger">{{model.log}}</p>
+
+        <h1 class="text-center">Plagiarism Detector</h1>
+        <hr>
+        <h3 class="text-center">Login</h3>
+
+        <!--Prompts user to enter username.-->
+        <form ng-submit="model.login(user)">
+            <label name="uname">Username</label>
+            <input ng-model="user.username"
+                   class="form-control"
+                   placeholder="username"/>
+            <br>
+
+            <!--Prompts user to enter password.-->
+            <label name="pwd">Password</label>
+            <input ng-model="user.password"
+                   class="form-control"
+                   type="password"
+                   placeholder="password"/>
+            <br>
+
+            <!--Logs in the user with the correct credentials.-->
+            <input type="submit" value="Login" class="btn btn-primary btn-block add-shadow" ng-click="model.login(user)"/>
+        </form>
+        <br>
+        <hr>
+    </div>
+
+    <p class="neubrand"></p>
+</div>

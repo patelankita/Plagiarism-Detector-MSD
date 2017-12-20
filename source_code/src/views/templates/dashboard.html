@@ -1,0 +1,57 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;
+  " ng-controller="DashboardController as model">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top add-shadow">
+        <div class="navbar-header pull-left">
+            <div class="container-fluid">
+                <span class="neuimage navbar-brand"></span>
+                <span class="navbar-brand pull-left">Welcome</span>
+            </div>
+        </div>
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#/home_page">
+                <span>Logout </span>
+                <span class="pull-right glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid">
+        <p ng-show="model.log" class="alert alert-danger">{{model.log}}</p>
+        <div class="container-fluid row">
+            <div class="col-xs-6">
+                <br>
+                <!--Gets the path of the first browsed file.-->
+                <button ng-click="model.getPath(1)" class="btn btn-block btn-primary wrap-text">Browse Original File Here</button>
+                <!--Previews contents of the first browsed file.-->
+                <textarea readonly class="textarea-styling" placeholder="Original File Contents">{{model.file1content}}</textarea>
+            </div>
+            <div class="col-xs-6">
+                <br>
+                <!--Gets the path of the second browsed file.-->
+                <button ng-click="model.getPath(2)" class="btn btn-block btn-primary wrap-text">Browse Suspected File Here</button>
+                <!--Previews contents of the second browsed file.-->
+                <textarea readonly class="textarea-styling" placeholder="Suspected File Contents">{{model.file2content}}</textarea>
+            </div>
+
+            <div class="container-fluid">
+                <!--Uploads the two browsed files.-->
+                <button ng-click="model.upload()" class="btn btn-danger btn-block wrap-text">Upload Both Files
+                    <i class="fa fa-spinner fa-pulse fa-1x fa-fw"></i>
+                </button>
+            </div>
+            <br>
+            <div ng-show="model.showResults" class="container-fluid">
+                <!--Once the backend sends the results, makes showResults button visible and takes user to the statistics page.-->
+                <button ng-click="model.viewStats()" class="btn btn-success btn-block wrap-text">Show results</button>
+                <br>
+            </div>
+        </div>
+        <p class="neubrand"></p>
+    </div>
+</div>

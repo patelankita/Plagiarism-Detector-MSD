@@ -1,0 +1,42 @@
+{
+  "name": "Plagarism-Detector",
+  "version": "1.0.1",
+  "description": "An Electron application that reports whether a suspected file is plagiarised or not based on the original file",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "electron ."
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Plagarism"
+  ],
+  "dependencies": {
+    "angular": "^1.6.0",
+    "angular-bootstrap": "^0.12.2",
+    "angular-datatables": "^0.5.6",
+    "angular-sanitize": "^1.6.6",
+    "angular-ui-router": "^0.4.3",
+    "animate.css": "^3.5.2",
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
+    "bootstrap": "^3.3.7",
+    "datatables": "^1.10.13",
+    "electron": "^1.7.9",
+    "express": "^4.16.2",
+    "jquery": "^3.1.1",
+    "lodash": "^4.16.6",
+    "mongoose": "^4.13.3",
+    "shelljs": "^0.7.5",
+    "ui-select": "0.19.6"
+  },
+  "author": "Ankita Patel, Chaitanya Kaul, Rosy Parmar and Vishruth Krishna Prasad",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "electron-installer-windows": "^0.2.0",
+    "electron-packager": "^8.2.0",
+    "mocha": "^4.0.1",
+    "require-directory": "^2.0.0"
+  }
+}

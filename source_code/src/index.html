@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+  <meta charset="utf-8"/>
+  <title>Plagarism Detector</title>
+  <meta name="description" content="Plagarism Detector MSD Project"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <link rel="stylesheet" href="../node_modules/animate.css/animate.css" type="text/css"/>
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css" type="text/css"/>
+
+  <!-- endbuild -->
+</head>
+<body ng-controller="AppCtrl">
+
+<div class="app" id="app"
+     ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}"
+     ui-view></div>
+
+<!-- build:js js/app.angular.js -->
+<!-- jQuery -->
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.js" onload="window.$ = window.jQuery = module.exports;"></script>
+<!-- Bootstrap -->
+<script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+<!-- Angular -->
+<script src="../node_modules/angular/angular.js"></script>
+<script src="../node_modules/ui-select/dist/select.min.js"></script>
+<script src="../node_modules/angular-sanitize/angular-sanitize.js"></script>
+<script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+<link rel="stylesheet" href="../node_modules/ui-select/dist/select.min.css">
+
+<!-- bootstrap -->
+<script src="../node_modules/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="../node_modules/datatables/media/js/jquery.dataTables.js"></script>
+<script src="../node_modules/angular-datatables/dist/angular-datatables.js"></script>
+<script src="../node_modules/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+<link rel="stylesheet" href="../node_modules/angular-datatables/dist/css/angular-datatables.css">
+<link rel="stylesheet" href="../node_modules/angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+<script>if (window.module) module = window.module;</script>
+
+<!-- App -->
+<script src="app.js"></script>
+<script src="config.js"></script>
+<script src="config.router.js"></script>
+<script src="main.js"></script>
+<script src="js/ui-load.js"></script>
+<script src="js/directives/ui-butterbar.js"></script>
+
+<!-- endbuild -->
+
+<!--Controllers-->
+<script src="views/controllers/homeController.js"></script>
+<script src="views/controllers/dashboardController.js"></script>
+<script src="views/controllers/statsController.js"></script>
+
+<!--Services-->
+<script src="services/file.service.client.js"></script>
+<script src="services/user.service.client.js"></script>
+<script src="services/results.service.client.js"></script>
+
+
+<!--Styles-->
+<link rel="stylesheet" href="views/styles.css">
+
+</body>
+</html>

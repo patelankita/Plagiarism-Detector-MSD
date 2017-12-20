@@ -1,0 +1,110 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-init="
+    app.settings.asideFolded = false;
+    app.settings.asideDock = false;
+   " ng-controller="StatsController as model">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top add-shadow">
+        <div class="navbar-header pull-left">
+            <!--Takes user back to the Dashboard-->
+            <a class="navbar-brand" ng-click="model.backButton()">
+                <span class="pull-left glyphicon glyphicon-chevron-left"></span>
+            </a>
+
+            <span class="neuimage navbar-brand"></span>
+            <span class="navbar-brand pull-left">Statistics</span>
+        </div>
+        <!--Logs out the user-->
+        <div class="navbar-header pull-right">
+            <a class="navbar-brand" href="#/home_page">
+                <span>Logout</span>
+                <span class="pull-right glyphicon glyphicon-log-out"></span>
+            </a>
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="container-fluid">
+        <nav class="nav container nav-styling add-shadow">
+            <!--When visual representation tab is active-->
+            <div ng-if="model.picRep">
+                <div class="col-xs-6 text-center">
+                    <!--Displays Visual Representation of the results computed by backend.-->
+                    <a class="btn btn-block navbar-brand active"
+                       ng-click="model.swapVisual(1)">
+                        Visual Representation
+                    </a>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <!--Displays Tabular Representation of the results computed by backend.-->
+                    <a class="btn btn-block navbar-brand" ng-click="model.swapVisual(2)">Tabular Format</a>
+                </div>
+            </div>
+
+            <!--When tabular format tab is active-->
+            <div ng-if="model.table">
+                <div class="col-xs-6 text-center">
+                    <a class="btn btn-block navbar-brand " ng-click="model.swapVisual(1)">Visual Representation</a>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <a class="btn btn-block navbar-brand active"
+                       ng-click="model.swapVisual(2)">
+                        Tabular Format
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <br>
+        <br>
+        <p class="container visual-text-bg"><b>Suspected File: {{model.suspectedFile}}</b></p>
+
+        <div class="container" ng-show="model.picRep">
+            <br>
+            <!--Visual representation of the suspected file-->
+            <div class="container-fluid">
+                <div class="row" ng-repeat="(str2, clas) in model.inputfile track by $index">
+                    <div class="col-xs-1">
+                        <p class="wrap-text alert-dismissible number-bg">{{str2}}</p>
+                    </div>
+                    <p ng-if="model.lineCopied(str2) == true"
+                       class="col-xs-11 visual-text-bg alert-danger wrap-text">
+                        {{clas}}
+                    </p>
+                    <p ng-if="model.lineCopied(str2) == false"
+                       class="col-xs-11 visual-text-bg alert-success wrap-text">
+                        {{clas}}
+                    </p>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+
+        <div class="container" ng-show="model.table">
+            <br>
+            <div class="container-fluid table-responsive">
+                <!--Table with scores for the suspected file-->
+                <table class="table table-hover table-bordered text-center add-shadow">
+                    <thead>
+                    <tr>
+                        <th class="text-center">Comparison Type</th>
+                        <th class="text-center">Score</th>
+                    </tr>
+                    </thead>
+
+                    <tbody ng-repeat="(key, value) in model.answers">
+                    <tr class="success">
+                        <td>{{key}}</td>
+                        <td>{{value}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <p class="neubrand"></p>
+</div>

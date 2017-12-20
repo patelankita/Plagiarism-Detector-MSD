@@ -1,0 +1,35 @@
+// A binary tree node
+class Node {
+ 
+    int data;
+    Node left, right;
+ 
+    Node(int item) {
+        data = item;
+        left = right = null;
+    }
+     int data;
+        Node left, right;
+
+        public Node(int item) {
+            data = item;
+            left = null;
+            right = null;
+        }
+         int data;
+            Node left, right;
+
+            public Node(int item) {
+                data = item;
+                left = null;
+                right = null;
+            }
+             int data;
+                Node left, right;
+
+                public Node(int item) {
+                    data = item;
+                    left = null;
+                    right = null;
+                }
+}
