@@ -1,5 +1,12 @@
 # Plagarism-Detector-quick-start
 
+## Objective
+
+The system is implemented in three phases.
+1. In Phase A, we were asked to develop a set of use cases that informally describe the behavior of the system from a user’s perspective and a mock- up of the system’s user-interface.
+2. In Phase B, we were asked to develop a set of UML Diagrams that reflect the high-level architecture of our system and a set of Java interfaces reflecting this design. 
+3. Phase C involves implementing the system in Java.
+
 ---
 
 ## To Use
